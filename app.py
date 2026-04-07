@@ -80,16 +80,19 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ─── Load Models ──────────────────────────────────────────────────────────────
-@st.cache_resource
-def load_models():
+    @st.cache_resource
+    def load_models():
+        base = os.path.dirname(__file__)
+    @st.cache_resource
+    def load_models():
     base = os.path.dirname(__file__)
 
-    def try_load(paths):
-        for p in paths:
-            if os.path.exists(p):
-                return joblib.load(p)
-        return None
+    vectorizer = joblib.load(os.path.join(base, "vectorizer.pkl"))
+    lr = joblib.load(os.path.join(base, "lr_model.pkl"))
+    nb = joblib.load(os.path.join(base, "nb_model.pkl"))
+    svm = joblib.load(os.path.join(base, "svm_model.pkl"))
 
+    return vectorizer, lr, nb, svm
     vectorizer = try_load([
         os.path.join(base, "vectorizer.pkl"),
         os.path.join(base, "1774471252513_vectorizer.pkl"),
