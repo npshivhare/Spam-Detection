@@ -1,7 +1,6 @@
-import streamlit as st
-import joblib
-import numpy as np
-import pandas as pd
-import plotly.graph_objects as go
-import plotly.express as px
-from plotly.subplots import make_subplots
+streamlit==1.32.0
+numpy==1.26.4
+pandas==2.2.2
+plotly==5.22.0
+scikit-learn==1.4.2
+joblib==1.4.2
