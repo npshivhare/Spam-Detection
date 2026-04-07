@@ -82,14 +82,15 @@ st.markdown("""
 # ─── Load Models ──────────────────────────────────────────────────────────────
 
 def load_models():
-    base = os.path.dirname(__file__)
+    base = os.path.dirname(os.path.abspath(__file__))
 
-    print("Loading models...")
+    print("Files in directory:", os.listdir(base))  # debug
 
-    vectorizer = joblib.load(os.path.join(MODEL_DIR, "vectorizer.pkl"))
-    lr_model = joblib.load(os.path.join(MODEL_DIR, "Logistic_Regression_model.pkl"))
-    nb_model = joblib.load(os.path.join(MODEL_DIR, "Naive_Bayes_model.pkl"))
-    svm_model = joblib.load(os.path.join(MODEL_DIR, "SVM_model.pkl"))
+    vectorizer = joblib.load(os.path.join(base, "vectorizer.pkl"))
+    lr_model = joblib.load(os.path.join(base, "Logistic_Regression_model.pkl"))
+    nb_model = joblib.load(os.path.join(base, "Naive_Bayes_model.pkl"))
+    svm_model = joblib.load(os.path.join(base, "SVM_model.pkl"))
+
     return vectorizer, lr_model, nb_model, svm_model
 
     vectorizer = try_load([
