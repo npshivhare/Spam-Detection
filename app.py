@@ -86,12 +86,11 @@ def load_models():
 
     print("Loading models...")
 
-    vectorizer = joblib.load(os.path.join(base, "vectorizer.pkl"))
-    lr = joblib.load(os.path.join(base, "lr_model.pkl"))
-    nb = joblib.load(os.path.join(base, "nb_model.pkl"))
-    svm = joblib.load(os.path.join(base, "svm_model.pkl"))
-
-    return vectorizer, lr, nb, svm
+    vectorizer = joblib.load(os.path.join(MODEL_DIR, "vectorizer.pkl"))
+    lr_model = joblib.load(os.path.join(MODEL_DIR, "Logistic_Regression_model.pkl"))
+    nb_model = joblib.load(os.path.join(MODEL_DIR, "Naive_Bayes_model.pkl"))
+    svm_model = joblib.load(os.path.join(MODEL_DIR, "SVM_model.pkl"))
+    return vectorizer, lr_model, nb_model, svm_model
 
     vectorizer = try_load([
         os.path.join(base, "vectorizer.pkl"),
