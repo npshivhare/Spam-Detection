@@ -4,9 +4,7 @@ A comparative spam detection system leveraging **Naive Bayes, Logistic Regressio
 
 🚀 **Live App:** https://spam-detection-j38eizgf968q9jznkjclfa.streamlit.app
 
-📂 **GitHub Repo:** https://github.com/npshivhare/Spam-Detection  
-
-🎥 **Demo Video:** 
+📂 **GitHub Repo:** https://github.com/npshivhare/Spam-Detection
 
 ---
 
